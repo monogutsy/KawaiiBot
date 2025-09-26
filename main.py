@@ -4,9 +4,6 @@ import os
 import ollama
 import json
 from dotenv import load_dotenv
-import webserv
-
-DISCORD_TOKEN = os.environ['discordkey']
 
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
@@ -76,5 +73,4 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-webserv.keep_alive()
-bot.run(DISCORD_TOKEN)
+bot.run(token)
